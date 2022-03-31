@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css">
+        <link rel="stylesheet" href="css/themes/pink.css">
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="search.js"></script>
+        
+        <script>
+          (function(document) {'use strict';var LightTableFilter = 
+          (function(Arr) {var _input;function _onInputEvent(e) {_input = e.target;var tables = 
+            document.getElementsByClassName(_input.getAttribute('data-table'));Arr.forEach.call(tables, 
+          function(table) {Arr.forEach.call(table.tBodies, 
+          function(tbody) {Arr.forEach.call(tbody.rows, _filter);});});}
+          function _filter(row) {var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+                row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';}return {init: 
+          function() {var inputs = document.getElementsByClassName('light-table-filter');Arr.forEach.call(inputs, 
+          function(input) {input.oninput = _onInputEvent;});}};})(Array.prototype);
+                document.addEventListener('readystatechange',
+          function() {if (document.readyState === 'complete') {LightTableFilter.init();}});})(document);
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Food</title>
+    </head>
+<body>
+	
+<div data-role="page" id="home">
+  <div data-role="header">
+  <h1><font size="5">食譜查詢</font></h1>
+  </div>
+  <div data-role="main" class="ui-content">
+    <p>選擇食譜查看</p>
+    <hr color="#ff8000">
+</div>
+
+
+  <input type="search" class="light-table-filter" data-table="order-table" placeholder="請輸入關鍵字">
+  <br>
+  <table class="order-table">
+  <tbody>
+  <tr><td><a href="20002.html"data-prefetch><font size="3">百合蓮子炒牛肉</font></a>  <br></td></tr>
+  <tr><td><a href="20003.html"data-prefetch><font size="3">芥藍牛肉</font></a>  <br></td></tr>
+  <tr><td><a href="20004.html"data-prefetch><font size="3">紅燒牛肉</font></a>  <br></td></tr>
+	</tbody>
+  </table>
+
+
+
+
+
+
+
+
+  
+  <div data-role="footer">
+  <div data-role="navbar">
+<ul>
+<li><a href="#home"data-icon="home">首頁</a></li>
+<li><a href="10001.html"data-icon="eye">食材查詢</a></li>
+<li><a href="20001.html"data-icon="comment">食譜查詢</a></li>
+<li><a href="99999.html"data-icon="location">自動配菜</a></li>
+<li><a href="99998.html"data-icon="user">食物庫存</a></li>
+</ul>
+</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
